@@ -56,7 +56,7 @@ typedef struct
 } GPIO_Config_t; 
 
 
-void GPIO_AutoInit(GPIO_Config_t cfg);
+void GPIO_AutoInit(GPIO_Config_t *cfg, uint32_t count);
 
 
 #endif

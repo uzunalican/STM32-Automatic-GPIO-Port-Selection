@@ -1,2 +1,7 @@
 # Automatic-GPIO-Port-Selection
 
+This project is a general-purpose GPIO configuration and initialization framework developed to eliminate manual, scattered, and project-specific GPIO initialization in STM32-based systems.
+
+The module analyzes the GPIO ports and pins used in a project, along with their input/output configurations, and performs the entire GPIO initialization process automatically, consistently, and from a single centralized point. With this approach, GPIO configuration is decoupled from application logic and transformed into a data-driven structure. The primary goal of this project is to convert the GPIO initialization process from a manual and repetitive task into a reusable, scalable, and maintainable infrastructure. This allows the developer to focus on application logic rather than low-level hardware details.
+
+**In addition, this architecture provides a flexible solution that eliminates the need to repeatedly regenerate code via STM32CubeMX when port assignments change, input/output scenarios are updated, or hardware revisions occur within the same project. As a result, hardware changes require minimal software modification, significantly improving maintainability and development efficiency.**

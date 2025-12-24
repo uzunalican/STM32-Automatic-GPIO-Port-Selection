@@ -1,7 +1,22 @@
 #include "main.h"
+#include "gpio_init.h"
+
 
 void SystemClock_Config(void);
 
+// GPIO configuration array
+GPIO_Config_t config[] =
+{
+    {PA, P0, INPUT,   NP, LOW_SPEED},
+    {PA, P1, INPUT,   NP, LOW_SPEED},
+    {PA, P4, OUTPUT,  PU, LOW_SPEED},
+    {PB, P2, OUTPUT,  PU, LOW_SPEED},
+    {PB, P0, INPUT,   NP, LOW_SPEED},
+    {PC, P4, OUTPUT,  PU, LOW_SPEED},
+    {PD, P3, INPUT,   NP, LOW_SPEED}
+};
+// Calculate the number of elements in the configuration array
+uint32_t configCount = sizeof(config) / sizeof(GPIO_Config_t);
 
 
 int main(void)
@@ -9,13 +24,15 @@ int main(void)
   HAL_Init();
   SystemClock_Config();
 
-  //
+  // Initialize GPIOs based on the configuration array
+  GPIO_AutoInit(config, configCount);
+  
 
   while (1)
   {
     //
   }
-  
+
 }
 
 
